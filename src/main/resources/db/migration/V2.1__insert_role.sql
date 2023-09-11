@@ -1,0 +1,3 @@
+INSERT INTO users.role (id, name)VALUES
+('ROLE_EMPLOYEE', 'ROLE_EMPLOYEE'),
+('ROLE_ADMIN', 'ROLE_ADMIN');
