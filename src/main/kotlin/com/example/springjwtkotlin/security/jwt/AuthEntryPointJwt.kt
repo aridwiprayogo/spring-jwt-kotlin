@@ -1,4 +1,4 @@
-package com.example.springkotlinjwt.security.jwt
+package com.example.springjwtkotlin.security.jwt
 
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse

@@ -1,7 +1,7 @@
-package com.example.springkotlinjwt.security.services
+package com.example.springjwtkotlin.security.services
 
-import com.example.springkotlinjwt.entity.Employee
-import com.example.springkotlinjwt.repository.EmployeeRepository
+import com.example.springjwtkotlin.entity.Employee
+import com.example.springjwtkotlin.repository.EmployeeRepository
 import jakarta.transaction.Transactional
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.core.userdetails.UserDetails

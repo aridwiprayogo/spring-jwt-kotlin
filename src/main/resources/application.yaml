@@ -1,1 +1,26 @@
-
+knf:
+  app:
+    jwtExpirationMs: 76300000
+    jwtSecret: cee15ba7-8992-4d4e-82f6-ef09ece1b33d
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/mydatabase
+    username: myuser
+    password: secret
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      schema:
+        -users
+  flyway:
+    enabled: true
+    baseline-version: 1.0.0
+    schemas:
+      - users
+    locations: classpath:db/migration
+    url: jdbc:postgresql://localhost:5433/mydatabase
+    user: myuser
+    password: secret
+    create-schemas: true
+  jpa:
+    hibernate:
+      ddl-auto: update

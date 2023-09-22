@@ -1,6 +1,6 @@
-package com.example.springkotlinjwt.repository
+package com.example.springjwtkotlin.repository
 
-import com.example.springkotlinjwt.entity.Role
+import com.example.springjwtkotlin.entity.Role
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface RoleRepository : JpaRepository<Role, String> {

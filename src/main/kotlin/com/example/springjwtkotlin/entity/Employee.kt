@@ -1,10 +1,10 @@
-package com.example.springkotlinjwt.entity
+package com.example.springjwtkotlin.entity
 
 import jakarta.persistence.*
 import jakarta.validation.constraints.*
 
 @Entity
-@Table(name = "employees")
+@Table(name = "employees", schema = "users")
 data class Employee(
     @Id
     var id: String = "",

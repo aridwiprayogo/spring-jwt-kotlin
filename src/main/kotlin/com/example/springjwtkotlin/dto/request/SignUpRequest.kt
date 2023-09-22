@@ -1,4 +1,4 @@
-package com.example.springkotlinjwt.dto.request
+package com.example.springjwtkotlin.dto.request
 
 import java.util.HashSet
 

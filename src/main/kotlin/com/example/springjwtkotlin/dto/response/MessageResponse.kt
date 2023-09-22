@@ -1,3 +1,3 @@
-package com.example.springkotlinjwt.dto.response
+package com.example.springjwtkotlin.dto.response
 
 data class MessageResponse(var message: String)

@@ -1,6 +1,6 @@
-package com.example.springkotlinjwt.security.jwt
+package com.example.springjwtkotlin.security.jwt
 
-import com.example.springkotlinjwt.security.services.EmployeeDetailsServiceImpl
+import com.example.springjwtkotlin.security.services.EmployeeDetailsServiceImpl
 import jakarta.servlet.FilterChain
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
@@ -30,8 +30,7 @@ class AuthTokenFilter : OncePerRequestFilter() {
             val headerAuth: String? = getHeaderAuth(request)
             val jwt = parseJwt(headerAuth)
             if (jwt != null && jwtUtils.validateJwtToken(jwt)) {
-                val authentication =
-                    usernamePasswordAuthentication(jwt)
+                val authentication = usernamePasswordAuthentication(jwt)
                 authentication.details = WebAuthenticationDetailsSource().buildDetails(request)
                 SecurityContextHolder.getContext().authentication = authentication
             }

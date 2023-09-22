@@ -1,16 +1,16 @@
-package com.example.springkotlinjwt.controller
+package com.example.springjwtkotlin.controller
 
-import com.example.springkotlinjwt.dto.request.LoginRequest
-import com.example.springkotlinjwt.dto.request.SignUpRequest
-import com.example.springkotlinjwt.dto.response.JwtResponse
-import com.example.springkotlinjwt.dto.response.MessageResponse
-import com.example.springkotlinjwt.entity.ERole
-import com.example.springkotlinjwt.entity.Employee
-import com.example.springkotlinjwt.entity.Role
-import com.example.springkotlinjwt.repository.EmployeeRepository
-import com.example.springkotlinjwt.repository.RoleRepository
-import com.example.springkotlinjwt.security.jwt.JwtUtils
-import com.example.springkotlinjwt.security.services.EmployeeDetailsImpl
+import com.example.springjwtkotlin.dto.request.LoginRequest
+import com.example.springjwtkotlin.dto.request.SignUpRequest
+import com.example.springjwtkotlin.dto.response.JwtResponse
+import com.example.springjwtkotlin.dto.response.MessageResponse
+import com.example.springjwtkotlin.entity.ERole
+import com.example.springjwtkotlin.entity.Employee
+import com.example.springjwtkotlin.entity.Role
+import com.example.springjwtkotlin.repository.EmployeeRepository
+import com.example.springjwtkotlin.repository.RoleRepository
+import com.example.springjwtkotlin.security.jwt.JwtUtils
+import com.example.springjwtkotlin.security.services.EmployeeDetailsImpl
 import jakarta.validation.Valid
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
@@ -56,11 +56,11 @@ class AuthController {
 
         return ResponseEntity.ok(
             JwtResponse(
-                accessToken = jwt,
-                id = employeeDetails.id!!,
+                accessToken  = jwt,
+                id           = employeeDetails.id!!,
                 employeename = employeeDetails.username,
-                email = employeeDetails.email,
-                roles = roles,
+                email        = employeeDetails.email,
+                roles        = roles,
             )
         )
     }
@@ -78,9 +78,9 @@ class AuthController {
         }
 
         val employee = Employee(
-            request.employeeName,
-            request.email,
-            passwordEncoder.encode(request.password)
+            name = request.employeeName,
+            email = request.email,
+            password = passwordEncoder.encode(request.password)
         )
         val strRoles = request.roles
         val roles: MutableSet<Role> = HashSet()

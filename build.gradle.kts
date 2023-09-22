@@ -27,7 +27,10 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("io.jsonwebtoken:jjwt:0.9.1")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("javax.xml.bind:jaxb-api:2.3.1")
+    implementation("org.glassfish.jaxb:jaxb-runtime:2.3.1")
     implementation("org.flywaydb:flyway-core")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     runtimeOnly("org.postgresql:postgresql")
@@ -48,10 +51,10 @@ tasks.withType<Test> {
 }
 
 tasks.test {
-    outputs.dir(snippetsDir)
+    outputs.dir(project.property("snippetsDir"))
 }
 
 tasks.asciidoctor {
-    inputs.dir(snippetsDir)
-    dependsOn(test)
+    inputs.dir(project.property("snippetsDir"))
+    dependsOn(tasks.test)
 }

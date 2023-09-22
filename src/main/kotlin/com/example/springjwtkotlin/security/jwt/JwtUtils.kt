@@ -1,4 +1,4 @@
-package com.example.springkotlinjwt.security.jwt
+package com.example.springjwtkotlin.security.jwt
 
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.*
@@ -18,7 +18,10 @@ class JwtUtils {
 
     fun validateJwtToken(jwtToken: String): Boolean {
         try {
-            Jwts.parser().setSigningKey(jwtSecret).parseClaimsJwt(jwtToken)
+            Jwts.parser()
+                .setSigningKey(jwtSecret)
+                .parseClaimsJws(jwtToken)
+                .body
             return true
         } catch (e: SignatureException) {
             logger.error("Invalid JWT signature: {}", e.message)

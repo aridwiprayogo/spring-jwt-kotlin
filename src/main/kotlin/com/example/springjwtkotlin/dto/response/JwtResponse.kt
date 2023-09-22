@@ -1,4 +1,4 @@
-package com.example.springkotlinjwt.dto.response
+package com.example.springjwtkotlin.dto.response
 
 data class JwtResponse(
     val accessToken: String, var id: String,
